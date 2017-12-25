@@ -21,32 +21,9 @@ How to use :
          To use this option, consider installing the Newtonsoft package, in package manager write this : 
               Install-Package Newtonsoft.Json -Version 10.0.3
            
-     in this case, in the frontend, your code must look like this :
-           var table = $('#id_of_your_table').DataTable({
-                        'searchable': true,
-                        "ordering": true,
-                        "serverSide": true,
-                        responsive: true,
-                        processing: true,
-                        ajax: {
-                            "url": "/url_to_your_controller_method",
-                            "type": "POST",
-                            "data": function (data) {
-
-                                return "req=" + JSON.stringify(data);
-                            }
-                        },
-                        "columnDefs": [
-                            {
-                                "targets": 0,
-                                "data": "The_name_of_the_column0", //Must be the same as the name in the results that you return
-                            },
-                            {
-                                "targets": 1,
-                                "data": "The_name_of_the_column1",
-                            }
-                        ]
-                    });
+     in this case, for the frontend (the script part) take a look at Frontend-String-Request.js to know how your ajax request must look like
+     
+     
       B/ Directly take your request as a DataTableRequest Object :
            Example :
              [HttpPost]
@@ -54,14 +31,7 @@ How to use :
              {
                 //You already have your dtParms so just use it
               }
-          In this case, you don't need to install any other package, just in the frontend when you declare the datatable your ajax call           will look like this : 
-                 ajax: {
-                            "url": "/url_to_your_controller_method",
-                            "type": "POST",
-                            "data": function (data) {
-
-                                return JSON.stringify({ dtParms : data});
-                            }
+           in this case, for the frontend (the script part) take a look at Frontend-DataTableRequest-Object.js to know how your ajax                  request must look like
                             
 4- now let's implement the rest, supposing that you got your dtParms, your function should look like this :
       
