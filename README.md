@@ -1,5 +1,6 @@
-# DotNetDataTable : This guide is for very newbies ^^
-This classes helps you to implement a .net code which render a datatable in server side, with the pagination, order and all it features.
+# DotNetDataTable : Implement a server side rendering DataTable (Back+Front)
+
+Just add or Copy/past DataTablesRequest.cs to your project and follow the steps if you don't know how to use it
 
 How to use :
 1- First, add DataTablesRequest.cs to your project, don't forget to change the namespace as you wish.
