@@ -64,7 +64,8 @@ How to use :
                 //if the datatable requested a sorting on the column 0 you sort that column in your records:
                     case 0: 
                         dataPage = requestedOrder.Dir.ToUpper().Equals("DESC") ?  
-                                 dataPage.OrderByDescending(f => f.The_column_that_corresponding_the_column0_in_your_datatable)                                         : dataPage.OrderBy(f => f.The_column_that_corresponding_the_column0_in_your_datatable);
+                                 dataPage.OrderByDescending(f => f.The_column_that_corresponding_the_column0_in_your_datatable) 
+                                 : dataPage.OrderBy(f => f.The_column_that_corresponding_the_column0_in_your_datatable);
                         break;
                     case 1:
                         dataPage = requestedOrder.Dir.ToUpper().Equals("DESC") ? 
